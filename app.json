@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "FitnessApp",
-    "slug": "FitnessApp",
+    "slug": "fitnessapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,16 +15,33 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.app.air8.fitness"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.app.air8.fitness",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "apiKey": "AIzaSyCjUtYFy8xhaeUCnjtsRXBiqrxMiMfcFow",
+      "authDomain": "air8-fitness-app.firebaseapp.com",
+      "projectId": "air8-fitness-app",
+      "storageBucket": "air8-fitness-app.appspot.com",
+      "messagingSenderId": "11178447726",
+      "appId": "1:11178447726:web:77e4753c290bab291aa77f",
+      "measurementId": "G-XF2KHXTDPP",
+      "databaseURL": "https://air8-fitness-app-default-rtdb.firebaseio.com",
+      "eas": {
+        "projectId": "d9d94f91-b852-447e-a684-1902d886ed53"
+      }
+    },
+    "owner": "beautiful"
   }
 }
