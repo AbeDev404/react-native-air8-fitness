@@ -1,0 +1,458 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.app.air8.fitness"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="33" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:4:3-75
+11-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:4:20-73
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:2:3-64
+12-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:2:20-62
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:3:3-77
+13-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:3:20-75
+14    <uses-permission android:name="android.permission.VIBRATE" />
+14-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:5:3-63
+14-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:5:20-61
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:6:3-78
+15-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:6:20-76
+16
+17    <queries>
+17-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:7:3-13:13
+18        <intent>
+18-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:8:5-12:14
+19            <action android:name="android.intent.action.VIEW" />
+19-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:9:7-58
+19-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:9:15-56
+20
+21            <category android:name="android.intent.category.BROWSABLE" />
+21-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:10:7-67
+21-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:10:17-65
+22
+23            <data android:scheme="https" />
+23-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:11:7-37
+23-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:11:13-35
+24        </intent>
+25        <!-- Query open documents -->
+26        <intent>
+26-->[:expo-file-system] E:\MyWork\Air8\FitnessApp\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:9-17:18
+27            <action android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
+27-->[:expo-file-system] E:\MyWork\Air8\FitnessApp\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-79
+27-->[:expo-file-system] E:\MyWork\Air8\FitnessApp\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:21-76
+28        </intent>
+29    </queries>
+30
+31    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+31-->[com.facebook.flipper:flipper:0.125.0] C:\Users\Aesop\.gradle\caches\transforms-3\fdda57ce4bccc1a2efc39cc3f9bc107f\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:5-76
+31-->[com.facebook.flipper:flipper:0.125.0] C:\Users\Aesop\.gradle\caches\transforms-3\fdda57ce4bccc1a2efc39cc3f9bc107f\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:22-73
+32    <uses-permission android:name="android.permission.WAKE_LOCK" />
+32-->[:react-native-firebase_auth] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-68
+32-->[:react-native-firebase_auth] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:22-65
+33    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+33-->[:react-native-firebase_auth] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
+33-->[:react-native-firebase_auth] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
+34    <uses-permission android:name="android.permission.USE_BIOMETRIC" /> <!-- suppress DeprecatedClassUsageInspection -->
+34-->[androidx.biometric:biometric:1.1.0] C:\Users\Aesop\.gradle\caches\transforms-3\0c4f0022af882e91b23b846396a11d79\transformed\biometric-1.1.0\AndroidManifest.xml:24:5-72
+34-->[androidx.biometric:biometric:1.1.0] C:\Users\Aesop\.gradle\caches\transforms-3\0c4f0022af882e91b23b846396a11d79\transformed\biometric-1.1.0\AndroidManifest.xml:24:22-69
+35    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+35-->[androidx.biometric:biometric:1.1.0] C:\Users\Aesop\.gradle\caches\transforms-3\0c4f0022af882e91b23b846396a11d79\transformed\biometric-1.1.0\AndroidManifest.xml:27:5-74
+35-->[androidx.biometric:biometric:1.1.0] C:\Users\Aesop\.gradle\caches\transforms-3\0c4f0022af882e91b23b846396a11d79\transformed\biometric-1.1.0\AndroidManifest.xml:27:22-71
+36    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+36-->[com.android.installreferrer:installreferrer:1.0] C:\Users\Aesop\.gradle\caches\transforms-3\0812e3217157bea7dd334fd59635d378\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:5-110
+36-->[com.android.installreferrer:installreferrer:1.0] C:\Users\Aesop\.gradle\caches\transforms-3\0812e3217157bea7dd334fd59635d378\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:22-107
+37
+38    <application
+38-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:14:3-33:17
+39        android:name="com.app.air8.fitness.MainApplication"
+39-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:14:16-47
+40        android:allowBackup="true"
+40-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:14:162-188
+41        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+41-->[androidx.core:core:1.7.0] C:\Users\Aesop\.gradle\caches\transforms-3\948c3612aee17d86e5c180e70c3ba7eb\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+42        android:debuggable="true"
+43        android:icon="@mipmap/ic_launcher"
+43-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:14:81-115
+44        android:label="@string/app_name"
+44-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:14:48-80
+45        android:roundIcon="@mipmap/ic_launcher_round"
+45-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:14:116-161
+46        android:supportsRtl="true"
+46-->[com.facebook.android:facebook-login:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\3d33567ac872a3905f4c90a4e5444fb9\transformed\jetified-facebook-login-9.0.0\AndroidManifest.xml:28:18-44
+47        android:theme="@style/AppTheme"
+47-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:14:189-220
+48        android:usesCleartextTraffic="true" >
+48-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:14:221-256
+49        <meta-data
+49-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:15:5-82
+50            android:name="expo.modules.updates.ENABLED"
+50-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:15:16-59
+51            android:value="true" />
+51-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:15:60-80
+52        <meta-data
+52-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:16:5-93
+53            android:name="expo.modules.updates.EXPO_SDK_VERSION"
+53-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:16:16-68
+54            android:value="48.0.0" />
+54-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:16:69-91
+55        <meta-data
+55-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:17:5-105
+56            android:name="expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH"
+56-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:17:16-80
+57            android:value="ALWAYS" />
+57-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:17:81-103
+58        <meta-data
+58-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:18:5-99
+59            android:name="expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS"
+59-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:18:16-79
+60            android:value="0" />
+60-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:18:80-97
+61        <meta-data
+61-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:19:5-124
+62            android:name="expo.modules.updates.EXPO_UPDATE_URL"
+62-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:19:16-67
+63            android:value="https://exp.host/@anonymous/FitnessApp" />
+63-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:19:68-122
+64
+65        <activity
+65-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:20:5-31:16
+66            android:name="com.app.air8.fitness.MainActivity"
+66-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:20:15-43
+67            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+67-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:20:77-154
+68            android:exported="true"
+68-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:20:276-299
+69            android:label="@string/app_name"
+69-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:20:44-76
+70            android:launchMode="singleTask"
+70-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:20:155-186
+71            android:screenOrientation="portrait"
+71-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:20:300-336
+72            android:theme="@style/Theme.App.SplashScreen"
+72-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:20:230-275
+73            android:windowSoftInputMode="adjustResize" >
+73-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:20:187-229
+74            <intent-filter>
+74-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:21:7-24:23
+75                <action android:name="android.intent.action.MAIN" />
+75-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:22:9-60
+75-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:22:17-58
+76
+77                <category android:name="android.intent.category.LAUNCHER" />
+77-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:23:9-68
+77-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:23:19-66
+78            </intent-filter>
+79            <intent-filter>
+79-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:25:7-30:23
+80                <action android:name="android.intent.action.VIEW" />
+80-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:9:7-58
+80-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:9:15-56
+81
+82                <category android:name="android.intent.category.DEFAULT" />
+82-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:27:9-67
+82-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:27:19-65
+83                <category android:name="android.intent.category.BROWSABLE" />
+83-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:10:7-67
+83-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:10:17-65
+84
+85                <data android:scheme="com.app.air8.fitness" />
+85-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:11:7-37
+85-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:11:13-35
+86            </intent-filter>
+87        </activity>
+88        <activity
+88-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:32:5-106
+89            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+89-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:32:15-79
+90            android:exported="false" />
+90-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:32:80-104
+91
+92        <meta-data
+92-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:9-11:36
+93            android:name="app_data_collection_default_enabled"
+93-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:13-63
+94            android:value="true" />
+94-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-33
+95
+96        <service
+96-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-21:19
+97            android:name="com.google.firebase.components.ComponentDiscoveryService"
+97-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-84
+98            android:directBootAware="true"
+98-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-43
+99            android:exported="false" >
+99-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-37
+100            <meta-data
+100-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-20:85
+101                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+101-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:17-120
+102                android:value="com.google.firebase.components.ComponentRegistrar" />
+102-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:17-82
+103            <meta-data
+103-->[com.google.firebase:firebase-firestore:24.6.1] C:\Users\Aesop\.gradle\caches\transforms-3\6df755e88e35767a3923d7bd0b3a86e9\transformed\jetified-firebase-firestore-24.6.1\AndroidManifest.xml:19:13-21:85
+104                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+104-->[com.google.firebase:firebase-firestore:24.6.1] C:\Users\Aesop\.gradle\caches\transforms-3\6df755e88e35767a3923d7bd0b3a86e9\transformed\jetified-firebase-firestore-24.6.1\AndroidManifest.xml:20:17-111
+105                android:value="com.google.firebase.components.ComponentRegistrar" />
+105-->[com.google.firebase:firebase-firestore:24.6.1] C:\Users\Aesop\.gradle\caches\transforms-3\6df755e88e35767a3923d7bd0b3a86e9\transformed\jetified-firebase-firestore-24.6.1\AndroidManifest.xml:21:17-82
+106            <meta-data
+106-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:69:13-71:85
+107                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+107-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:70:17-109
+108                android:value="com.google.firebase.components.ComponentRegistrar" />
+108-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:71:17-82
+109        </service>
+110
+111        <provider
+111-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-27:38
+112            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+112-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-88
+113            android:authorities="com.app.air8.fitness.reactnativefirebaseappinitprovider"
+113-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-86
+114            android:exported="false"
+114-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-37
+115            android:initOrder="99" />
+115-->[:react-native-firebase_app] E:\MyWork\Air8\FitnessApp\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-35
+116        <provider
+116-->[:expo-file-system] E:\MyWork\Air8\FitnessApp\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-30:20
+117            android:name="expo.modules.filesystem.FileSystemFileProvider"
+117-->[:expo-file-system] E:\MyWork\Air8\FitnessApp\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-74
+118            android:authorities="com.app.air8.fitness.FileSystemFileProvider"
+118-->[:expo-file-system] E:\MyWork\Air8\FitnessApp\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-74
+119            android:exported="false"
+119-->[:expo-file-system] E:\MyWork\Air8\FitnessApp\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-37
+120            android:grantUriPermissions="true" >
+120-->[:expo-file-system] E:\MyWork\Air8\FitnessApp\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-47
+121            <meta-data
+121-->[:expo-file-system] E:\MyWork\Air8\FitnessApp\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-29:70
+122                android:name="android.support.FILE_PROVIDER_PATHS"
+122-->[:expo-file-system] E:\MyWork\Air8\FitnessApp\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:17-67
+123                android:resource="@xml/file_system_provider_paths" />
+123-->[:expo-file-system] E:\MyWork\Air8\FitnessApp\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-67
+124        </provider>
+125
+126        <meta-data
+126-->[:expo-modules-core] E:\MyWork\Air8\FitnessApp\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-10:89
+127            android:name="org.unimodules.core.AppLoader#react-native-headless"
+127-->[:expo-modules-core] E:\MyWork\Air8\FitnessApp\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-79
+128            android:value="expo.modules.adapters.react.apploader.RNHeadlessAppLoader" />
+128-->[:expo-modules-core] E:\MyWork\Air8\FitnessApp\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:13-86
+129
+130        <activity
+130-->[com.facebook.android:facebook-common:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\259e7688de212445075cd72542346ddf\transformed\jetified-facebook-common-9.0.0\AndroidManifest.xml:30:9-33:66
+131            android:name="com.facebook.FacebookActivity"
+131-->[com.facebook.android:facebook-common:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\259e7688de212445075cd72542346ddf\transformed\jetified-facebook-common-9.0.0\AndroidManifest.xml:31:13-57
+132            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+132-->[com.facebook.android:facebook-common:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\259e7688de212445075cd72542346ddf\transformed\jetified-facebook-common-9.0.0\AndroidManifest.xml:32:13-96
+133            android:theme="@style/com_facebook_activity_theme" />
+133-->[com.facebook.android:facebook-common:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\259e7688de212445075cd72542346ddf\transformed\jetified-facebook-common-9.0.0\AndroidManifest.xml:33:13-63
+134        <activity android:name="com.facebook.CustomTabMainActivity" />
+134-->[com.facebook.android:facebook-common:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\259e7688de212445075cd72542346ddf\transformed\jetified-facebook-common-9.0.0\AndroidManifest.xml:34:9-71
+134-->[com.facebook.android:facebook-common:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\259e7688de212445075cd72542346ddf\transformed\jetified-facebook-common-9.0.0\AndroidManifest.xml:34:19-68
+135        <activity
+135-->[com.facebook.android:facebook-common:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\259e7688de212445075cd72542346ddf\transformed\jetified-facebook-common-9.0.0\AndroidManifest.xml:35:9-49:20
+136            android:name="com.facebook.CustomTabActivity"
+136-->[com.facebook.android:facebook-common:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\259e7688de212445075cd72542346ddf\transformed\jetified-facebook-common-9.0.0\AndroidManifest.xml:36:13-58
+137            android:exported="true" >
+137-->[com.facebook.android:facebook-common:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\259e7688de212445075cd72542346ddf\transformed\jetified-facebook-common-9.0.0\AndroidManifest.xml:37:13-36
+138            <intent-filter>
+138-->[com.facebook.android:facebook-common:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\259e7688de212445075cd72542346ddf\transformed\jetified-facebook-common-9.0.0\AndroidManifest.xml:39:13-48:29
+139                <action android:name="android.intent.action.VIEW" />
+139-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:9:7-58
+139-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:9:15-56
+140
+141                <category android:name="android.intent.category.DEFAULT" />
+141-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:27:9-67
+141-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:27:19-65
+142                <category android:name="android.intent.category.BROWSABLE" />
+142-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:10:7-67
+142-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:10:17-65
+143
+144                <data
+144-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:11:7-37
+145                    android:host="cct.com.app.air8.fitness"
+146                    android:scheme="fbconnect" />
+146-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:11:13-35
+147            </intent-filter>
+148        </activity>
+149
+150        <provider
+150-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\6a062b21418219d1f36fa88bd61c9016\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+151            android:name="androidx.startup.InitializationProvider"
+151-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\6a062b21418219d1f36fa88bd61c9016\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+152            android:authorities="com.app.air8.fitness.androidx-startup"
+152-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\6a062b21418219d1f36fa88bd61c9016\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+153            android:exported="false" >
+153-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\6a062b21418219d1f36fa88bd61c9016\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+154            <meta-data
+154-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\6a062b21418219d1f36fa88bd61c9016\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+155                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+155-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\6a062b21418219d1f36fa88bd61c9016\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+156                android:value="androidx.startup" />
+156-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\6a062b21418219d1f36fa88bd61c9016\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+157            <meta-data
+157-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Aesop\.gradle\caches\transforms-3\010b64a8b5f74270f65831dbc9c1f706\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+158                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+158-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Aesop\.gradle\caches\transforms-3\010b64a8b5f74270f65831dbc9c1f706\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+159                android:value="androidx.startup" />
+159-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Aesop\.gradle\caches\transforms-3\010b64a8b5f74270f65831dbc9c1f706\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+160        </provider>
+161
+162        <activity
+162-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Aesop\.gradle\caches\transforms-3\7debc5de1d7b5caf6df9671ec966474b\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:23:9-27:75
+163            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+163-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Aesop\.gradle\caches\transforms-3\7debc5de1d7b5caf6df9671ec966474b\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:24:13-93
+164            android:excludeFromRecents="true"
+164-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Aesop\.gradle\caches\transforms-3\7debc5de1d7b5caf6df9671ec966474b\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:25:13-46
+165            android:exported="false"
+165-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Aesop\.gradle\caches\transforms-3\7debc5de1d7b5caf6df9671ec966474b\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:26:13-37
+166            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+166-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Aesop\.gradle\caches\transforms-3\7debc5de1d7b5caf6df9671ec966474b\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:27:13-72
+167        <!--
+168            Service handling Google Sign-In user revocation. For apps that do not integrate with
+169            Google Sign-In, this service will never be started.
+170        -->
+171        <service
+171-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Aesop\.gradle\caches\transforms-3\7debc5de1d7b5caf6df9671ec966474b\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:33:9-37:51
+172            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+172-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Aesop\.gradle\caches\transforms-3\7debc5de1d7b5caf6df9671ec966474b\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:34:13-89
+173            android:exported="true"
+173-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Aesop\.gradle\caches\transforms-3\7debc5de1d7b5caf6df9671ec966474b\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:35:13-36
+174            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+174-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Aesop\.gradle\caches\transforms-3\7debc5de1d7b5caf6df9671ec966474b\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:36:13-107
+175            android:visibleToInstantApps="true" />
+175-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Aesop\.gradle\caches\transforms-3\7debc5de1d7b5caf6df9671ec966474b\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:37:13-48
+176
+177        <activity
+177-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:29:9-46:20
+178            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+178-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:30:13-80
+179            android:excludeFromRecents="true"
+179-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:31:13-46
+180            android:exported="true"
+180-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:32:13-36
+181            android:launchMode="singleTask"
+181-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:33:13-44
+182            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+182-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:34:13-72
+183            <intent-filter>
+183-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:35:13-45:29
+184                <action android:name="android.intent.action.VIEW" />
+184-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:9:7-58
+184-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:9:15-56
+185
+186                <category android:name="android.intent.category.DEFAULT" />
+186-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:27:9-67
+186-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:27:19-65
+187                <category android:name="android.intent.category.BROWSABLE" />
+187-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:10:7-67
+187-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:10:17-65
+188
+189                <data
+189-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:11:7-37
+190                    android:host="firebase.auth"
+191                    android:path="/"
+192                    android:scheme="genericidp" />
+192-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:11:13-35
+193            </intent-filter>
+194        </activity>
+195        <activity
+195-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:47:9-64:20
+196            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+196-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:48:13-79
+197            android:excludeFromRecents="true"
+197-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:49:13-46
+198            android:exported="true"
+198-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:50:13-36
+199            android:launchMode="singleTask"
+199-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:51:13-44
+200            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+200-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:52:13-72
+201            <intent-filter>
+201-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\374d188cb11ad0bc07c9a17d7230a30c\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:53:13-63:29
+202                <action android:name="android.intent.action.VIEW" />
+202-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:9:7-58
+202-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:9:15-56
+203
+204                <category android:name="android.intent.category.DEFAULT" />
+204-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:27:9-67
+204-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:27:19-65
+205                <category android:name="android.intent.category.BROWSABLE" />
+205-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:10:7-67
+205-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:10:17-65
+206
+207                <data
+207-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:11:7-37
+208                    android:host="firebase.auth"
+209                    android:path="/"
+210                    android:scheme="recaptcha" />
+210-->E:\MyWork\Air8\FitnessApp\android\app\src\main\AndroidManifest.xml:11:13-35
+211            </intent-filter>
+212        </activity>
+213        <activity
+213-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Aesop\.gradle\caches\transforms-3\d0bc646d15ed12bc45bfd6dfc4dd6ce6\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+214            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+214-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Aesop\.gradle\caches\transforms-3\d0bc646d15ed12bc45bfd6dfc4dd6ce6\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+215            android:exported="false"
+215-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Aesop\.gradle\caches\transforms-3\d0bc646d15ed12bc45bfd6dfc4dd6ce6\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+216            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+216-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Aesop\.gradle\caches\transforms-3\d0bc646d15ed12bc45bfd6dfc4dd6ce6\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+217
+218        <provider
+218-->[com.google.firebase:firebase-common:20.3.2] C:\Users\Aesop\.gradle\caches\transforms-3\62ff89ad882d6db93b8aa2cc0ff90393\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:25:9-30:39
+219            android:name="com.google.firebase.provider.FirebaseInitProvider"
+219-->[com.google.firebase:firebase-common:20.3.2] C:\Users\Aesop\.gradle\caches\transforms-3\62ff89ad882d6db93b8aa2cc0ff90393\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:26:13-77
+220            android:authorities="com.app.air8.fitness.firebaseinitprovider"
+220-->[com.google.firebase:firebase-common:20.3.2] C:\Users\Aesop\.gradle\caches\transforms-3\62ff89ad882d6db93b8aa2cc0ff90393\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:27:13-72
+221            android:directBootAware="true"
+221-->[com.google.firebase:firebase-common:20.3.2] C:\Users\Aesop\.gradle\caches\transforms-3\62ff89ad882d6db93b8aa2cc0ff90393\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:28:13-43
+222            android:exported="false"
+222-->[com.google.firebase:firebase-common:20.3.2] C:\Users\Aesop\.gradle\caches\transforms-3\62ff89ad882d6db93b8aa2cc0ff90393\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:29:13-37
+223            android:initOrder="100" />
+223-->[com.google.firebase:firebase-common:20.3.2] C:\Users\Aesop\.gradle\caches\transforms-3\62ff89ad882d6db93b8aa2cc0ff90393\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:30:13-36
+224
+225        <meta-data
+225-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\Aesop\.gradle\caches\transforms-3\f8c6fe314e082e09ec8d53d9f784df19\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:21:9-23:69
+226            android:name="com.google.android.gms.version"
+226-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\Aesop\.gradle\caches\transforms-3\f8c6fe314e082e09ec8d53d9f784df19\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:22:13-58
+227            android:value="@integer/google_play_services_version" />
+227-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\Aesop\.gradle\caches\transforms-3\f8c6fe314e082e09ec8d53d9f784df19\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:23:13-66
+228        <!--
+229         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+230         with the application context. This config is merged in with the host app's manifest,
+231         but there can only be one provider with the same authority activated at any given
+232         point; so if the end user has two or more different apps that use Facebook SDK, only the
+233         first one will be able to use the provider. To work around this problem, we use the
+234         following placeholder in the authority to identify each host application as if it was
+235         a completely different provider.
+236        -->
+237        <provider
+237-->[com.facebook.android:facebook-core:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\644f5c3e7f364f71dc60c1883784bd32\transformed\jetified-facebook-core-9.0.0\AndroidManifest.xml:39:9-42:40
+238            android:name="com.facebook.internal.FacebookInitProvider"
+238-->[com.facebook.android:facebook-core:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\644f5c3e7f364f71dc60c1883784bd32\transformed\jetified-facebook-core-9.0.0\AndroidManifest.xml:40:13-70
+239            android:authorities="com.app.air8.fitness.FacebookInitProvider"
+239-->[com.facebook.android:facebook-core:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\644f5c3e7f364f71dc60c1883784bd32\transformed\jetified-facebook-core-9.0.0\AndroidManifest.xml:41:13-72
+240            android:exported="false" />
+240-->[com.facebook.android:facebook-core:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\644f5c3e7f364f71dc60c1883784bd32\transformed\jetified-facebook-core-9.0.0\AndroidManifest.xml:42:13-37
+241
+242        <receiver
+242-->[com.facebook.android:facebook-core:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\644f5c3e7f364f71dc60c1883784bd32\transformed\jetified-facebook-core-9.0.0\AndroidManifest.xml:44:9-50:20
+243            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+243-->[com.facebook.android:facebook-core:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\644f5c3e7f364f71dc60c1883784bd32\transformed\jetified-facebook-core-9.0.0\AndroidManifest.xml:45:13-86
+244            android:exported="false" >
+244-->[com.facebook.android:facebook-core:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\644f5c3e7f364f71dc60c1883784bd32\transformed\jetified-facebook-core-9.0.0\AndroidManifest.xml:46:13-37
+245            <intent-filter>
+245-->[com.facebook.android:facebook-core:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\644f5c3e7f364f71dc60c1883784bd32\transformed\jetified-facebook-core-9.0.0\AndroidManifest.xml:47:13-49:29
+246                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+246-->[com.facebook.android:facebook-core:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\644f5c3e7f364f71dc60c1883784bd32\transformed\jetified-facebook-core-9.0.0\AndroidManifest.xml:48:17-95
+246-->[com.facebook.android:facebook-core:9.0.0] C:\Users\Aesop\.gradle\caches\transforms-3\644f5c3e7f364f71dc60c1883784bd32\transformed\jetified-facebook-core-9.0.0\AndroidManifest.xml:48:25-92
+247            </intent-filter>
+248        </receiver>
+249    </application>
+250
+251</manifest>
