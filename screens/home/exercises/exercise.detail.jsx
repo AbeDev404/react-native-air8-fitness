@@ -37,10 +37,12 @@ const ExerciseDetailScreen = ({route, navigation}) => {
         <TouchableOpacity onPress={() => navigation.pop()}>
           <MaterialIcons name="arrow-back-ios" size={30} color={Colors.DarkGreen} />
         </TouchableOpacity>
-        <Text style={[GlobalStyle.ManjariBold, Styles.label]}>{route.params.data.en_name}</Text>
-        <Text style={[GlobalStyle.Manjari, Styles.label, Styles.idName, GlobalStyle.round]}>{exerciseID()}</Text>
+        <Text style={[GlobalStyle.ManjariBold, Styles.label, {fontSize: 20, paddingTop: 10}]}>{route.params.data.en_name}</Text>
+        <View style={[GlobalStyle.round, {overflow: 'hidden', backgroundColor: Colors.MainGreen}]}>
+          <Text style={[GlobalStyle.Manjari, Styles.label, Styles.idName]}>{exerciseID()}</Text>
+        </View>
       </View>
-      <ScrollView showsVerticalScrollIndicator={false} style={[{width: '100%', marginBottom: 50}]} contentContainerStyle={[GlobalStyle.flex('column', 'center', 'flex-start'), {paddingBottom: 50}]}>
+      <ScrollView showsVerticalScrollIndicator={false} style={[{width: '100%'}]} contentContainerStyle={[GlobalStyle.flex('column', 'center', 'flex-start'), {paddingBottom: 100}]}>
         <View style={[Styles.videoContainer, GlobalStyle.BoxShadow, GlobalStyle.round]}>
           <Video
             ref={setupVideo}

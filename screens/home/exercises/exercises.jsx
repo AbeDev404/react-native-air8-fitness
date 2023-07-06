@@ -39,6 +39,7 @@ const HomeScreen = ({route, navigation}) => {
 
     useEffect(() => {
         if(activeCategory.length === 0) setAllActive(true);
+        console.log(type);
         fetchExercises(activeCategory, type, null)
     }, [type, activeCategory])
 
@@ -185,7 +186,7 @@ const Styles = new StyleSheet.create({
     },
     menuItem: {
         flexGrow: 0.5,
-        paddingTop: 5,
+        paddingVertical: 5,
     },
     selector: {
         width: '50%',

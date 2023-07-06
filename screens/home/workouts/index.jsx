@@ -88,12 +88,13 @@ const Styles = new StyleSheet.create({
         backgroundColor: 'white'
     },  
     label: {
-        height: GlobalStyle.SCREEN_HEIGHT / 15,
+        // height: GlobalStyle.SCREEN_HEIGHT / 15,
         color: Colors.DarkGreen,
         paddingHorizontal: 20,
         fontSize: 15,
         fontWeight: 600,
         textAlign: 'left',
+        paddingVertical: 10,
         width: GlobalStyle.SCREEN_WIDTH / 3
     },
     activeLabel: {
@@ -115,6 +116,8 @@ const Styles = new StyleSheet.create({
         borderWidth: 2,
         borderColor: Colors.MainGreen,
         backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     selector: {
         width: '50%',
