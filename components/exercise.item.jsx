@@ -66,15 +66,15 @@ const ExerciseItem = ({data, category, uid, navigation, onAddExercise, removeExe
                 </Text>
             </View>
             <View style={[GlobalStyle.flex('column', 'center', 'space-around'), {width: '20%'}]}>
-                <Text style={[GlobalStyle.round, GlobalStyle.Manjari, Styles.label, Styles.idName]}>
-                    { exerciseID() }
-                </Text>
+                <View style={[GlobalStyle.round, {overflow: 'hidden', backgroundColor: Colors.MainGreen}]}>
+                    <Text style={[GlobalStyle.Manjari, Styles.label, Styles.idName]}>{ exerciseID() }</Text>
+                </View>
                 <View style={[GlobalStyle.flex('row', 'center', 'center')]}>
                     { data.size.map((item, index, array) => <Text key={index} style={[GlobalStyle.Manjari, Styles.label]}>{item} </Text>) }
                 </View>
                 { addable && (
-                    <TouchableOpacity onPress={onAdd}>
-                        <Text style={[GlobalStyle.round, GlobalStyle.Manjari, Styles.label, Styles.addButton, {backgroundColor: added ? Colors.ButtonBGlight : Colors.MainGreen,}]}>
+                    <TouchableOpacity onPress={onAdd} style={[GlobalStyle.round, {overflow: 'hidden'}]}>
+                        <Text style={[GlobalStyle.Manjari, Styles.label, Styles.addButton, {backgroundColor: added ? Colors.ButtonBGlight : Colors.MainGreen,}]}>
                             { added ? 'Added' : 'Add' }
                         </Text>
                     </TouchableOpacity>

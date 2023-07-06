@@ -8,7 +8,7 @@ import Colors from '../assets/styles/colors'
 const BottomNavigator = ({route, navigation}) => {
     
     const GoWorkouts = () => {
-        if(route.name !== 'Workouts') navigation.replace('Workouts', { type: 'my.workouts' })
+        if(route.name !== 'Workouts') navigation.push('Workouts', { type: 'my.workouts' })
     }
 
     const GoHome = () => {
