@@ -12,6 +12,7 @@ const useWorkouts= () => {
         if(FirebaseApp.apps.length === 0) FirebaseApp.initializeApp(Config.firebaseConfig);
 
         setLoading(true);
+        console.log('111')
         FireStore().collection('Workouts').doc('test').get().then(result => {
             const keys = Object.keys(result._data);
             setWorkoutNames(keys)

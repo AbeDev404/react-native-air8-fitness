@@ -91,7 +91,7 @@ const Styles = new StyleSheet.create({
         // height: GlobalStyle.SCREEN_HEIGHT / 15,
         color: Colors.DarkGreen,
         paddingHorizontal: 20,
-        fontSize: 15,
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30,
         fontWeight: 600,
         textAlign: 'left',
         paddingVertical: 10,
@@ -144,7 +144,7 @@ const Styles = new StyleSheet.create({
     categoryLabel: {
         color: Colors.DarkGreen,
         fontWeight: 400,
-        fontSize: 15,
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30,
         paddingTop: 10,
         paddingBottom: 10,
     },

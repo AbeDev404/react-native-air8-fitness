@@ -49,7 +49,7 @@ export default {
         borderRadius: 30,
     },
     label: {
-        fontSize: 20,
+        fontSize: width / 20,
         fontWeight: 700,
     },
 }

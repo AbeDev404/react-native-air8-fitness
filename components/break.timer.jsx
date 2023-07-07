@@ -44,7 +44,7 @@ const Styles = new StyleSheet.create({
     title: {
         color: Colors.DarkGreen,
         paddingRight: 20,
-        fontSize: 15,
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30,
         fontWeight: 600,
         textAlign: 'center',
         textAlignVertical: 'center',
@@ -52,7 +52,7 @@ const Styles = new StyleSheet.create({
     label: {
         color: Colors.DarkGreen,
         paddingHorizontal: 20,
-        fontSize: 15,
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30,
         fontWeight: 600,
         textAlign: 'center',
         textAlignVertical: 'center',
