@@ -48,7 +48,7 @@ const WorkoutExerciseItem = ({time1, time2, time3, data, category, uid, navigati
     }
 
     return (
-        <View onPress={goToDetailExercise} style={[GlobalStyle.flex('column', 'center', 'flex-start'), GlobalStyle.round, Styles.exerciseItem, GlobalStyle.BoxShadow]}>
+        <View onPress={goToDetailExercise} style={[GlobalStyle.flex('column', 'center', 'flex-start'), GlobalStyle.round, Styles.exerciseItem, GlobalStyle.BoxShadow, {paddingVertical: 10}]}>
             <View style={[GlobalStyle.flex('row', 'space-around', 'center'), {width: '100%'}]}>
                 <View style={{width: '20%'}}>
                     {
@@ -70,9 +70,9 @@ const WorkoutExerciseItem = ({time1, time2, time3, data, category, uid, navigati
                     </Text>
                 </View>
                 <View style={[GlobalStyle.flex('column', 'center', 'space-around'), {width: '20%'}]}>
-                    <Text style={[GlobalStyle.round, GlobalStyle.Manjari, Styles.label, Styles.idName]}>
-                        { exerciseID() }
-                    </Text>
+                    <View style={[GlobalStyle.round, {overflow: 'hidden', backgroundColor: Colors.MainGreen}]}>
+                        <Text style={[GlobalStyle.Manjari, Styles.label, Styles.idName]}>{ exerciseID() }</Text>
+                    </View>
                     <View style={[GlobalStyle.flex('row', 'center', 'center')]}>
                         { data.size.map((item, index, array) => <Text key={index} style={[GlobalStyle.Manjari, Styles.label]}>{item} </Text>) }
                     </View>
@@ -105,13 +105,13 @@ const Styles = new StyleSheet.create({
         marginBottom: 10,
     },
     label: {
-        fontSize: 14
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30
     },
     bold: {
         fontWeight: 'bold'
     },
     label1: {
-        fontSize: 12
+        fontSize: GlobalStyle.SCREEN_WIDTH / 35
     },
     addButton: {
         color: Colors.DarkGreen,
@@ -134,7 +134,7 @@ const Styles = new StyleSheet.create({
     menulabel: {
         color: Colors.DarkGreen,
         paddingHorizontal: 20,
-        fontSize: 15,
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30,
         fontWeight: 600,
         textAlign: 'center',
         textAlignVertical: 'center',
@@ -151,7 +151,7 @@ const Styles = new StyleSheet.create({
     },
     menuItem: {
         flexGrow: 0.5,
-        paddingTop: 5,
+        paddingVertical: 10,
         borderStyle: 'solid',
         borderWidth: 2,
         borderColor: Colors.MainGreen,

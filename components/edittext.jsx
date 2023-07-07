@@ -34,7 +34,7 @@ const styles = new StyleSheet.create({
     },
     textinput: {
         color: Colors.DarkGreen,
-        fontSize: 15,
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30,
         paddingRight: 30,
         width: '100%'
     },

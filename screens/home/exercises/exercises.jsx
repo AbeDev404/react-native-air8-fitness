@@ -24,13 +24,14 @@ const HomeScreen = ({route, navigation}) => {
     const [lastDocument, setLastDocument] = useState(null);
     const [method, setMethod] = useState('browse')
     const [tempData, setTempData] = useState([])
+    const [initial, setInitial] = useState(false);
+
+    useEffect(() => {
+        initial && fetchFitnessCategoryData();
+    }, [initial])
 
     useEffect(() => {
         route.params.type === 'office' && onToggleTab();
-        fetchFitnessCategoryData();
-    }, [])
-
-    useEffect(() => {
         if(route.params.method !== undefined) setMethod(route.params.method)
         if(route.params.method === 'get') {
             route.params.selectedData !== undefined && setTempData(route.params.selectedData);
@@ -39,8 +40,8 @@ const HomeScreen = ({route, navigation}) => {
 
     useEffect(() => {
         if(activeCategory.length === 0) setAllActive(true);
-        console.log(type);
-        fetchExercises(activeCategory, type, null)
+        fetchExercises(activeCategory, initial ? type : route.params.type, null)
+        !initial && setInitial(true);
     }, [type, activeCategory])
 
     useEffect(() => {
@@ -175,7 +176,7 @@ const Styles = new StyleSheet.create({
         color: Colors.DarkGreen,
         paddingLeft: 20,
         paddingRight: 20,
-        fontSize: 20,
+        fontSize: GlobalStyle.SCREEN_WIDTH / 20,
         fontWeight: 600
     },
     menu: {
@@ -212,7 +213,7 @@ const Styles = new StyleSheet.create({
     categoryLabel: {
         color: Colors.DarkGreen,
         fontWeight: 400,
-        fontSize: 15,
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30,
     },
     exerciseContainer: {
         paddingTop: 20,
@@ -228,7 +229,7 @@ const Styles = new StyleSheet.create({
     buttonLabel: {
         textAlign: 'center',
         width: '100%',
-        fontSize: 15,
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30,
         color: 'white'
     },
 });

@@ -74,7 +74,7 @@ const WorkoutScreen = ({route, navigation}) => {
                 {!playing && (<Feather name="play" size={8} color='transparent' />)} 
                 <Feather name={playing ? 'pause' : 'play'} size={32} color={Colors.MainGreen} />
             </TouchableOpacity>
-            // <Text style={[GlobalStyle.ManjariBold, {fontSize: 20}]}>00:00</Text>
+            // <Text style={[GlobalStyle.ManjariBold, {fontSize: GlobalStyle.SCREEN_WIDTH / 20}]}>00:00</Text>
         )
     }
 
@@ -174,7 +174,6 @@ const WorkoutScreen = ({route, navigation}) => {
                         source={{ uri: videoUri }}
                         resizeMode={ResizeMode.CONTAIN}
                         isLooping
-                        useNativeControls
                         onLoadStart={() => setLoading(true)}
                         onLoad={() => setLoading(false)}
                         onPlaybackStatusUpdate={onPlaybackStatusUpdate}
@@ -224,7 +223,7 @@ const Styles = new StyleSheet.create({
     },
     label: {
         color: Colors.DarkGreen,
-        fontSize: 20,
+        fontSize: GlobalStyle.SCREEN_WIDTH / 20,
         fontWeight: 600,
     },
     videoContainer: {
@@ -239,7 +238,7 @@ const Styles = new StyleSheet.create({
     },
     title: {
         color: Colors.DarkGreen,
-        fontSize: 30,
+        fontSize:  GlobalStyle.SCREEN_WIDTH / 15,
         fontWeight: 600,
     }
 });

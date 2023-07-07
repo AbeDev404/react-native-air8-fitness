@@ -97,13 +97,13 @@ const Styles = new StyleSheet.create({
         paddingBottom: 10,
     },
     label: {
-        fontSize: 14
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30
     },
     bold: {
         fontWeight: 'bold'
     },
     label1: {
-        fontSize: 12
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30
     },
     addButton: {
         color: Colors.DarkGreen,

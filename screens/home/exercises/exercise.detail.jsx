@@ -37,7 +37,7 @@ const ExerciseDetailScreen = ({route, navigation}) => {
         <TouchableOpacity onPress={() => navigation.pop()}>
           <MaterialIcons name="arrow-back-ios" size={30} color={Colors.DarkGreen} />
         </TouchableOpacity>
-        <Text style={[GlobalStyle.ManjariBold, Styles.label, {fontSize: 20, paddingTop: 10}]}>{route.params.data.en_name}</Text>
+        <Text style={[GlobalStyle.ManjariBold, Styles.label, {fontSize: GlobalStyle.SCREEN_WIDTH / 20, paddingTop: 10}]}>{route.params.data.en_name}</Text>
         <View style={[GlobalStyle.round, {overflow: 'hidden', backgroundColor: Colors.MainGreen}]}>
           <Text style={[GlobalStyle.Manjari, Styles.label, Styles.idName]}>{exerciseID()}</Text>
         </View>
@@ -50,9 +50,9 @@ const ExerciseDetailScreen = ({route, navigation}) => {
             source={{
               uri: videoType === 'setup' ? route.params.data.setup_video_url : route.params.data.video_url,
             }}
-            useNativeControls
             resizeMode={ResizeMode.CONTAIN}
             isLooping
+            shouldPlay
             onLoadStart={() => setLoading(true)}
             onLoad={() => setLoading(false)}
             onPlaybackStatusUpdate={status => setStatus(() => status)}
@@ -126,8 +126,8 @@ const ExerciseDetailScreen = ({route, navigation}) => {
           </TouchableOpacity>
         </View>
         
-        <Text style={[GlobalStyle.ManjariBold, Styles.label, Styles.maxWidth, {textAlign: 'left', fontSize: 20, marginTop: 20}]}>Description</Text>
-        <Text style={[Styles.maxWidth, GlobalStyle.Manjari, Styles.label, {textAlign: 'left', fontSize: 18}]}>{route.params.data.description}</Text>
+        <Text style={[GlobalStyle.ManjariBold, Styles.label, Styles.maxWidth, {textAlign: 'left', fontSize: GlobalStyle.SCREEN_WIDTH / 20, marginTop: 20}]}>Description</Text>
+        <Text style={[Styles.maxWidth, GlobalStyle.Manjari, Styles.label, {textAlign: 'left', fontSize: GlobalStyle.SCREEN_WIDTH / 25}]}>{route.params.data.description}</Text>
       </ScrollView>
 
       <Loading loading={loading} />
@@ -141,7 +141,7 @@ const Styles = new StyleSheet.create({
     padding: 20,
   },
   label: {
-    fontSize: 15,
+    fontSize: GlobalStyle.SCREEN_WIDTH / 30,
     textAlign: 'center',
     color: Colors.DarkGreen,
   },
@@ -194,7 +194,7 @@ const Styles = new StyleSheet.create({
     marginTop: 20,
   },
   text: {
-    fontSize: 13,
+    fontSize: GlobalStyle.SCREEN_WIDTH / 35,
     width: '70%'
   },
   headerTitle: {

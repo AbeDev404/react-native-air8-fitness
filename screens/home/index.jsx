@@ -1,5 +1,7 @@
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import Lottie from 'lottie-react-native'
+import { useFonts } from 'expo-font'
+import { Manjari_400Regular as Manjari, Manjari_700Bold as ManjariBold } from '@expo-google-fonts/manjari'
 
 import Colors from '../../assets/styles/colors';
 import GlobalStyle from '../../assets/styles/global.style'
@@ -21,6 +23,7 @@ const HomeScreen = ({route, navigation}) => {
     const GoWorkouts = () => {
         navigation.push('Workouts', { type: 'my.workouts' })
     }
+    const [loaded, error] = useFonts({ Manjari, ManjariBold });
 
 
     return (
@@ -65,7 +68,7 @@ const Styles = new StyleSheet.create({
         backgroundColor: Colors.MainGreen,
         paddingHorizontal: 20,
         paddingVertical: 5,
-        fontSize: 20
+        fontSize: GlobalStyle.SCREEN_WIDTH / 20
     },
     labelContainer: {
         position: 'absolute', 

@@ -150,7 +150,7 @@ const Styles = new StyleSheet.create({
         marginBottom: 10,
     },
     label: {
-        fontSize: 15,
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30,
     },
     saveButton: {
         backgroundColor: Colors.MainGreen,
@@ -160,7 +160,7 @@ const Styles = new StyleSheet.create({
     label1: {
         textAlign: 'center',
         width: '100%',
-        fontSize: 15,
+        fontSize: GlobalStyle.SCREEN_WIDTH / 30,
         color: 'white'
     },
 })

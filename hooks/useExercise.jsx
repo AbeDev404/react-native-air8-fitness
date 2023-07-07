@@ -7,10 +7,11 @@ const useExercise = () => {
     const [exercise, setExercise] = useState([])
 
     const getExercise = async (uid) => {
-        if(FirebaseApp.apps.length === 0) await FirebaseApp.initializeApp(Config.firebaseConfig);
+        if(FirebaseApp.apps.length === 0) FirebaseApp.initializeApp(Config.firebaseConfig);
 
         const data = await FireStore().collection('Exercises').doc(uid).get()
         setExercise(data)
+        console.log(data._data);
         return data._data;
     }
 

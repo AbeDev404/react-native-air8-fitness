@@ -4,6 +4,7 @@ import LottieView from 'lottie-react-native'
 import SortableList from 'react-native-sortable-list';
 import { ALERT_TYPE, Toast } from 'react-native-alert-notification'
 import { MaterialIcons } from '@expo/vector-icons';
+import DraggableFlatList, { ScaleDecorator } from 'react-native-draggable-flatlist' 
 
 import useStoreWorkouts from '../../../hooks/useStoreWorkouts';
 import WorkoutExerciseItem from '../../../components/workout.exercise';
@@ -15,58 +16,11 @@ import Alarm from '../../../assets/drawables/alarm.json'
 import { ScrollView } from 'react-native-gesture-handler';
 import Loading from '../../../components/loading';
 
-const Row = ({type, index, active, data, onChangeBreakTimer, onChangeWorkoutTimer, onRemoveExercise}) => {    
-  const activeAnim = useRef(new Animated.Value(0));
-
-  const style = useMemo(
-    () => ({
-      transform: [
-        { scaleX: activeAnim.current.interpolate({ inputRange: [0, 1], outputRange: [1, 1.05]}) },
-        { scaleY: activeAnim.current.interpolate({ inputRange: [0, 1], outputRange: [1, 1.05]}) },
-      ],
-    })
-  );
-  useEffect(() => {
-    Animated.timing(activeAnim.current, {
-      duration: 300,
-      easing: Easing.bounce,
-      toValue: Number(active),
-      useNativeDriver: true,
-    }).start();
-  }, [active]);
-
-  let workoutTimeType = 1;
-  if(data.workoutTime === 30) workoutTimeType = 1;
-  if(data.workoutTime === 60) workoutTimeType = 2;
-  if(data.workoutTime === 90) workoutTimeType = 3;
-
-  let breakTimeType = 1;
-  if(data.breakTime === 10) breakTimeType = 1;
-  if(data.breakTime === 30) breakTimeType = 2;
-  if(data.breakTime === 60) breakTimeType = 3;
-
-  if(type !== 'edit.workouts') {
-    if(index === 0 || (index + 1) % 4 !== 0) {
-      breakTimeType = 0;
-      onChangeBreakTimer(data.uid, 0)
-    }
-  } else {
-    if(index === 0 || index % 4 !== 0) {
-      breakTimeType = 0;
-      onChangeBreakTimer(data.uid, 0)
-    }
-  }
-
-  return (
-    <Animated.View useNativeDriver={true} style={[{width: '100%'}, GlobalStyle.flex('column', 'center', 'flex-start'), style]}>
-      <WorkoutExerciseItem onRemoveExercise={(uid) => onRemoveExercise(uid)} data={data.data} time1={30} time2={60} time3={90} timerType={workoutTimeType} onChangeTimer={(uid, timer) => onChangeWorkoutTimer(uid, timer)} type={workoutTimeType} uid={data.uid} category={data.category} />
-      <BreakTimer uid={data.uid} title={`Break\nTime`} onChangeTimer={(uid, timer) => onChangeBreakTimer(uid, timer)} timerType={breakTimeType} time1={10} time2={30} time3={60} containerStyle={{width: '90%', opacity: breakTimeType !== 0 ? 100 : 0}} />
-    </Animated.View>
-  );
-}
+import Constants from 'expo-constants';
+const statusBarHeight = Constants.statusBarHeight;
 
 const NewWorkoutScreen = ({params, navigation, onClose}) => {
-  const [workouts, setWorkouts] = useState([{}])
+  const [workouts, setWorkouts] = useState([])
   const [scrollenabled, setScrollenabled] = useState(true);
   const [fitnessCount, setFitnessCount] = useState(0)
   const [officeCount, setOfficeCount] = useState(0)
@@ -110,12 +64,17 @@ const NewWorkoutScreen = ({params, navigation, onClose}) => {
     setOfficeTime(time_office)
     setBreakTime(time_break)
   }
-
-  const callback = (data) => setWorkouts(data) 
+  const callback = (data) => {
+    for(let i = 0 ; i < data.length ; i++) data[i].key = `item-${i}`
+    setWorkouts(data) 
+  }
   useEffect(() => {
-    !flag && params.data?.length > 0 && setWorkouts(params.data), setFlag(true);
+    if(!flag && params.data?.length > 0) {
+      for(let i = 0 ; i < params.data.length ; i++) params.data[i].key = `item-${i}`
+      setWorkouts(params.data);
+      setFlag(true);
+    }
   }, [])
-
   const onChangeBreakTimer = (uid, timer) => {
     let t = workouts;
     let pos = t.findIndex((item, index, array) => item.uid === uid);
@@ -142,29 +101,59 @@ const NewWorkoutScreen = ({params, navigation, onClose}) => {
     });
   }
 
-  const renderRow = useCallback(({key, data, disabled, active, index}) => {
-    if(Object.keys(data).length > 0)
-      return <Row type={params.type} useNativeDriver={true} index={index} data={data} active={active} onChangeWorkoutTimer={onChangeWorkoutTimer} onChangeBreakTimer={onChangeBreakTimer} onRemoveExercise={onRemoveExercise} />;
-  }, []);
+  const renderItem = ({ item, drag, isActive, getIndex }) => {
+    const data = item, index = getIndex();
+    
+    let workoutTimeType = 1;
+    if(data.workoutTime === 30) workoutTimeType = 1;
+    if(data.workoutTime === 60) workoutTimeType = 2;
+    if(data.workoutTime === 90) workoutTimeType = 3;
+
+    let breakTimeType = 1;
+    if(data.breakTime === 10) breakTimeType = 1;
+    if(data.breakTime === 30) breakTimeType = 2;
+    if(data.breakTime === 60) breakTimeType = 3;
+
+    if(params.type !== 'edit.workouts') {
+      if(index === 0 || (index + 1) % 4 !== 0) {
+        breakTimeType = 0;
+        onChangeBreakTimer(data.uid, 0)
+      }
+    } else {
+      if(index === 0 || index % 4 !== 0) {
+        breakTimeType = 0;
+        onChangeBreakTimer(data.uid, 0)
+      }
+    }
+
+    return (
+      <ScaleDecorator>
+        <TouchableOpacity onLongPress={drag} disabled={isActive} style={[{width: '100%'}, GlobalStyle.flex('column', 'center', 'flex-start')]}>
+          {/* <Row type={params.type} index={index} data={data} active={active} onChangeWorkoutTimer={onChangeWorkoutTimer} onChangeBreakTimer={onChangeBreakTimer} onRemoveExercise={onRemoveExercise} /> */}
+          <WorkoutExerciseItem onRemoveExercise={(uid) => onRemoveExercise(uid)} data={data.data} time1={30} time2={60} time3={90} timerType={workoutTimeType} onChangeTimer={(uid, timer) => onChangeWorkoutTimer(uid, timer)} type={workoutTimeType} uid={data.uid} category={data.category} />
+          { breakTimeType !== 0 && (<BreakTimer uid={data.uid} title={`Break\nTime`} onChangeTimer={(uid, timer) => onChangeBreakTimer(uid, timer)} timerType={breakTimeType} time1={10} time2={30} time3={60} containerStyle={{width: '90%'}} />) }
+        </TouchableOpacity>
+      </ScaleDecorator>
+    );
+  };
 
   const saveNewWorkouts = () => {
     let t = workouts;
     for(let i = 0; i < t.length ; i++) {
-      if(i % 4 !== 0) t[i].breakTime = 0;
+      if((i + 1) % 4 !== 0) t[i].breakTime = 0;
     }
-    setWorkouts(t);
     if(workoutName === '') {
       Toast.show({ type: ALERT_TYPE.WARNING, title: 'Invalid Input Data', textBody: 'Please Enter Your New Workout Name' })
     } else if(workouts.length < 2) {
       Toast.show({ type: ALERT_TYPE.WARNING, title: 'Invalid Input Data', textBody: 'Please add more than 3 exercises.' })
     } else {
       let uids = [], break_times = [], workout_times = [], types = [];
-      _sortableRef.current.state.order.map((item, index, array) => {
+      t.map((item, index, array) => {
         if(item != 0) {
-          uids.push(workouts[item].uid);
-          types.push(workouts[item].data.type);
-          break_times.push(workouts[item].breakTime);
-          workout_times.push(workouts[item].workoutTime);
+          uids.push(item.uid);
+          types.push(item.data.type);
+          break_times.push(item.breakTime);
+          workout_times.push(item.workoutTime);
         }
       })
       setLoading(true);
@@ -192,20 +181,16 @@ const NewWorkoutScreen = ({params, navigation, onClose}) => {
       })
     }
   }
-
   const updateNewWorkouts = () => {
-    console.log(workouts)
     if(workouts.length < 2) {
       Toast.show({ type: ALERT_TYPE.WARNING, title: 'Invalid Input Data', textBody: 'Please add more than 3 exercises.' })
     } else {
       let uids = [], break_times = [], workout_times = [], types = [];
-      _sortableRef.current.state.order.map((item, index, array) => {
-        if(item != 0) {
-          uids.push(workouts[item].uid);
-          types.push(workouts[item].data.type);
-          break_times.push(workouts[item].breakTime);
-          workout_times.push(workouts[item].workoutTime);
-        }
+      workouts.map((item, index, array) => {
+        uids.push(item.uid);
+        types.push(item.data.type);
+        break_times.push(item.breakTime);
+        workout_times.push(item.workoutTime);
       })
       setLoading(true);
       storeWorkouts(params.type, {
@@ -232,7 +217,6 @@ const NewWorkoutScreen = ({params, navigation, onClose}) => {
       })
     }
   }
-
   const str_pad_left = (string, pad, length) => {
     return (new Array(length + 1).join(pad) + string).slice(-length);
   }
@@ -278,7 +262,7 @@ const NewWorkoutScreen = ({params, navigation, onClose}) => {
           
         </View>
 
-        <SortableList
+        {/* <SortableList
           ref={_sortableRef}
           contentContainerStyle={{paddingBottom: 50}}
           style={[Styles.list]}
@@ -286,7 +270,17 @@ const NewWorkoutScreen = ({params, navigation, onClose}) => {
           renderRow={renderRow}
           onActivateRow={() => { console.log(_sortableRef.current); setScrollenabled(false) }}
           onReleaseRow={() => { setScrollenabled(true) }}
+        /> */}
+        <DraggableFlatList
+          data={workouts}
+          ref={_sortableRef}
+          onDragEnd={({ data }) => setWorkouts(data)}
+          keyExtractor={(item) => item.key}
+          renderItem={renderItem}
+          contentContainerStyle={{paddingBottom: 50}}
+          style={[Styles.list]}
         />
+        
       </ScrollView>
 
       <TouchableOpacity onPress={onAddExercises} style={[Styles.addButton, GlobalStyle.round, GlobalStyle.BoxShadow]}>
@@ -300,12 +294,12 @@ const NewWorkoutScreen = ({params, navigation, onClose}) => {
 const Styles = new StyleSheet.create({
   container: {
     width: GlobalStyle.SCREEN_WIDTH,
-    height: '100%',
+    flex: 1,
     paddingHorizontal: GlobalStyle.SCREEN_WIDTH * 0.05,
   },
   addButton: {
     position: 'absolute',
-    bottom: 10,
+    bottom: 10 + statusBarHeight,
     backgroundColor: Colors.MainGreen,
     width: GlobalStyle.SCREEN_WIDTH / 2,
     paddingVertical: 8
@@ -313,7 +307,7 @@ const Styles = new StyleSheet.create({
   buttonLabel: {
     textAlign: 'center',
     width: '100%',
-    fontSize: 15,
+    fontSize: GlobalStyle.SCREEN_WIDTH / 30,
     color: 'white'
   },
   panel: {
@@ -325,7 +319,7 @@ const Styles = new StyleSheet.create({
     marginBottom: 10,
   },
   label: {
-    fontSize: 15,
+    fontSize: GlobalStyle.SCREEN_WIDTH / 30,
   },
   saveButton: {
     backgroundColor: Colors.MainGreen,
@@ -335,12 +329,13 @@ const Styles = new StyleSheet.create({
   label1: {
     textAlign: 'center',
     width: '100%',
-    fontSize: 15,
+    fontSize: GlobalStyle.SCREEN_WIDTH / 30,
     color: 'white'
   },
   list: {
     marginTop: 10,
     width: '100%',
+    height: GlobalStyle.SCREEN_HEIGHT / 1.8
   },
   
 })
