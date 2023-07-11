@@ -1,7 +1,5 @@
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import Lottie from 'lottie-react-native'
-import { useFonts } from 'expo-font'
-import { Manjari_400Regular as Manjari, Manjari_700Bold as ManjariBold } from '@expo-google-fonts/manjari'
 
 import Colors from '../../assets/styles/colors';
 import GlobalStyle from '../../assets/styles/global.style'
@@ -23,8 +21,6 @@ const HomeScreen = ({route, navigation}) => {
     const GoWorkouts = () => {
         navigation.push('Workouts', { type: 'my.workouts' })
     }
-    const [loaded, error] = useFonts({ Manjari, ManjariBold });
-
 
     return (
         <View style={[GlobalStyle.container, GlobalStyle.flex('column', 'center', 'space-around'), { paddingBottom: 70 }]}>

@@ -11,12 +11,12 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		153E7D8192D84AEC86CF32FE /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61084940E3047888CBFF9A8 /* noop-file.swift */; };
+		2793C5B53CE88360D9BBC1BE /* Pods_FitnessApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16FE78EB7685D0F608FEF2A /* Pods_FitnessApp.framework */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		3FF10B192A570E4A00E5F1B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FF10B182A570E4900E5F1B1 /* GoogleService-Info.plist */; };
 		3FF10B1E2A57351600E5F1B1 /* Manjari_100Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF10B1D2A57351600E5F1B1 /* Manjari_100Thin.ttf */; };
 		3FF10B222A57352B00E5F1B1 /* Manjari_400Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF10B212A57352B00E5F1B1 /* Manjari_400Regular.ttf */; };
 		3FF10B242A57353500E5F1B1 /* Manjari_700Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF10B232A57353500E5F1B1 /* Manjari_700Bold.ttf */; };
-		96905EF65AED1B983A6B3ABC /* libPods-FitnessApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-FitnessApp.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 /* End PBXBuildFile section */
@@ -33,11 +33,11 @@
 		3FF10B1D2A57351600E5F1B1 /* Manjari_100Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Manjari_100Thin.ttf; sourceTree = "<group>"; };
 		3FF10B212A57352B00E5F1B1 /* Manjari_400Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Manjari_400Regular.ttf; sourceTree = "<group>"; };
 		3FF10B232A57353500E5F1B1 /* Manjari_700Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Manjari_700Bold.ttf; sourceTree = "<group>"; };
-		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-FitnessApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FitnessApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2E3173556A471DD304B334 /* Pods-FitnessApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessApp.debug.xcconfig"; path = "Target Support Files/Pods-FitnessApp/Pods-FitnessApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-FitnessApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessApp.release.xcconfig"; path = "Target Support Files/Pods-FitnessApp/Pods-FitnessApp.release.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = FitnessApp/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
+		C16FE78EB7685D0F608FEF2A /* Pods_FitnessApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitnessApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61084940E3047888CBFF9A8 /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "FitnessApp/noop-file.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-FitnessApp/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96905EF65AED1B983A6B3ABC /* libPods-FitnessApp.a in Frameworks */,
+				2793C5B53CE88360D9BBC1BE /* Pods_FitnessApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				58EEBF8E8E6FB1BC6CAF49B5 /* libPods-FitnessApp.a */,
+				C16FE78EB7685D0F608FEF2A /* Pods_FitnessApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,6 +172,7 @@
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
 				5E2FABE7E1BCC7F1BC1A8030 /* [CP] Embed Pods Frameworks */,
 				0F1059793F5FFC517A67094E /* [CP-User] [RNFB] Core Configuration */,
+				A1FF10C8DFEE693D0D572195 /* [CP-User] [RNFB] Crashlytics Configuration */,
 			);
 			buildRules = (
 			);
@@ -323,6 +324,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FitnessApp/Pods-FitnessApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A1FF10C8DFEE693D0D572195 /* [CP-User] [RNFB] Crashlytics Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "[CP-User] [RNFB] Crashlytics Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\nif [[ ${PODS_ROOT} ]]; then\n  echo \"info: Exec FirebaseCrashlytics Run from Pods\"\n  \"${PODS_ROOT}/FirebaseCrashlytics/run\"\nelse\n  echo \"info: Exec FirebaseCrashlytics Run from framework\"\n  \"${PROJECT_DIR}/FirebaseCrashlytics.framework/run\"\nfi\n";
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;

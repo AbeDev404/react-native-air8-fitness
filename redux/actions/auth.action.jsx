@@ -11,7 +11,6 @@ export const DoFirebaseSignIn = (email, pwd) => dispatch => {
     if(!FirebaseApp.apps.length) FirebaseApp.initializeApp(Config.firebaseConfig);
 
     Auth().signInWithEmailAndPassword(email, pwd).then(result => {
-        console.log('uid' + result.user.uid);
         FireStore().collection('Users').doc(result.user.uid).get().then(doc => {
             dispatch({
                 type: KEYS.SIGN_IN_SUCCESS,

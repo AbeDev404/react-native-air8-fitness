@@ -69,8 +69,9 @@ const NewWorkoutScreen = ({params, navigation, onClose}) => {
     setWorkouts(data) 
   }
   useEffect(() => {
-    if(!flag && params.data?.length > 0) {
+    if(!flag && params.data !== undefined) {
       for(let i = 0 ; i < params.data.length ; i++) params.data[i].key = `item-${i}`
+      
       setWorkouts(params.data);
       setFlag(true);
     }
@@ -114,16 +115,9 @@ const NewWorkoutScreen = ({params, navigation, onClose}) => {
     if(data.breakTime === 30) breakTimeType = 2;
     if(data.breakTime === 60) breakTimeType = 3;
 
-    if(params.type !== 'edit.workouts') {
-      if(index === 0 || (index + 1) % 4 !== 0) {
-        breakTimeType = 0;
-        onChangeBreakTimer(data.uid, 0)
-      }
-    } else {
-      if(index === 0 || index % 4 !== 0) {
-        breakTimeType = 0;
-        onChangeBreakTimer(data.uid, 0)
-      }
+    if((index + 1) % 4 !== 0) {
+      breakTimeType = 0;
+      onChangeBreakTimer(data.uid, 0)
     }
 
     return (
@@ -204,7 +198,7 @@ const NewWorkoutScreen = ({params, navigation, onClose}) => {
           Toast.show({ type: ALERT_TYPE.WARNING, title: 'Warning Occured', textBody: 'The Workouts Name Already Exists.' })
         } else if(result === 'success') {
           setLoading(false);
-          Toast.show({ type: ALERT_TYPE.SUCCESS, title: 'Congratulations!', textBody: 'Your Workouts Successfully Added.' })
+          Toast.show({ type: ALERT_TYPE.SUCCESS, title: 'Congratulations!', textBody: 'Your Workouts Successfully Updated.' })
           setTimeout(() => {
             navigation.replace('Workouts', { type: 'my.workouts' })
           }, 1000)
@@ -262,15 +256,6 @@ const NewWorkoutScreen = ({params, navigation, onClose}) => {
           
         </View>
 
-        {/* <SortableList
-          ref={_sortableRef}
-          contentContainerStyle={{paddingBottom: 50}}
-          style={[Styles.list]}
-          data={workouts}
-          renderRow={renderRow}
-          onActivateRow={() => { console.log(_sortableRef.current); setScrollenabled(false) }}
-          onReleaseRow={() => { setScrollenabled(true) }}
-        /> */}
         <DraggableFlatList
           data={workouts}
           ref={_sortableRef}

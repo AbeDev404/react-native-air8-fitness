@@ -11,7 +11,6 @@ const useExercise = () => {
 
         const data = await FireStore().collection('Exercises').doc(uid).get()
         setExercise(data)
-        console.log(data._data);
         return data._data;
     }
 

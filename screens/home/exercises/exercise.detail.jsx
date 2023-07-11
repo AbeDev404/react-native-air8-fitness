@@ -14,7 +14,6 @@ import Favorite from '../../../assets/drawables/favorite.json'
 
 const ExerciseDetailScreen = ({route, navigation}) => {
   const setupVideo = useRef(null), mainVideo = useRef(null);
-  const [status, setStatus] = useState({});
   const [videoType, setVideoType] = useState('setup')
   const [loading, setLoading] = useState(false);
 
@@ -55,7 +54,6 @@ const ExerciseDetailScreen = ({route, navigation}) => {
             shouldPlay
             onLoadStart={() => setLoading(true)}
             onLoad={() => setLoading(false)}
-            onPlaybackStatusUpdate={status => setStatus(() => status)}
           />
         </View>
         <View style={[Styles.maxWidth, Styles.toolbar, GlobalStyle.flex('row', 'space-between', 'center')]}>

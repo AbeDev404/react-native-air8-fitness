@@ -3,6 +3,7 @@ import LottieView from 'lottie-react-native'
 import {View, Text, TouchableOpacity, StyleSheet, ScrollView} from 'react-native'
 import { FontAwesome5 } from '@expo/vector-icons';
 
+import useRemoveWorkout from '../../../hooks/useRemoveWorkout';
 import EditText from '../../../components/edittext'
 import useGetWorkouts from '../../../hooks/useGetWorkouts'
 import GlobalStyle from '../../../assets/styles/global.style'
@@ -12,12 +13,16 @@ import Loading from '../../../components/loading'
 import useExercise from '../../../hooks/useExercise'
 import EditWorkout from './new.workouts';
 import useFitnessCategory from '../../../hooks/useFitnessCategory'
+import Trash from '../../../assets/drawables/trash.json'
 
 const MyWorkoutScreen = ({navigation, onEdit, editable_workout}) => {
     const [category, fetchFitnessCategoryData] = useFitnessCategory();
     const [_exercise, getExercise] = useExercise();
     const [_loading, setLoading] = useState(false);
     const [workouts, workoutNames, loading, getWorkouts] = useGetWorkouts();
+    const [_removeLoading, removeWorkout] = useRemoveWorkout();
+    const [_workouts, setWorkouts] = useState([])
+    const [_workoutNames, setWorkoutNames] = useState([])
     const [data, setData] = useState(null)
 
     useEffect(() => {
@@ -25,12 +30,19 @@ const MyWorkoutScreen = ({navigation, onEdit, editable_workout}) => {
         fetchFitnessCategoryData();
     }, [])
 
+    useEffect(() => {
+        if(workouts.length > 0) {
+            setWorkouts(workouts)
+            setWorkoutNames(workoutNames)
+        }
+    }, [workouts])
+
     const str_pad_left = (string, pad, length) => {
         return (new Array(length + 1).join(pad) + string).slice(-length);
     }
 
     const onEditWorkout = async (workout, name) => {
-        let exercises = [{}];
+        let exercises = [];
         setLoading(true);
         for(let i = 0 ; i < workout.uids.length ; i++) {
             let data = await getExercise(workout.uids[i])
@@ -61,6 +73,7 @@ const MyWorkoutScreen = ({navigation, onEdit, editable_workout}) => {
         setLoading(true);
         for(let i = 0 ; i < workout.uids.length ; i++) {
             let data = await getExercise(workout.uids[i])
+            // console.log(data);
             let item = {
                 breakTime: workout.break_times[i],
                 category: category,
@@ -77,10 +90,21 @@ const MyWorkoutScreen = ({navigation, onEdit, editable_workout}) => {
         })
     }
 
+    const onRemoveWorkout = (workoutName) => {
+        removeWorkout(workoutName)
+        let t = _workoutNames;
+        let temp = t.filter((item, index, array) => item !== workoutName)
+        setWorkoutNames(temp);
+    }
+
+    useEffect(() => {
+        setLoading(_removeLoading);
+    }, [_removeLoading])
+
     return (
         <View style={[Styles.container, GlobalStyle.flex('column', 'center', 'flex-start')]}>
             <ScrollView contentContainerStyle={[{paddingTop: 15, paddingBottom: 80}]} style={{width: GlobalStyle.SCREEN_WIDTH}}>
-                {workoutNames.map((key, index, array) => {
+                {_workoutNames.map((key, index, array) => {
                     const item = workouts[index]
                     
                     if(item !== undefined ) {
@@ -116,6 +140,9 @@ const MyWorkoutScreen = ({navigation, onEdit, editable_workout}) => {
                                 <TouchableOpacity onPress={() => onPlayWorkout(item, key)} style={[{width: 40, height: 40, backgroundColor: 'orangered'}, GlobalStyle.flex('row', 'center', 'center'), GlobalStyle.round, GlobalStyle.BoxShadow]}>
                                     <FontAwesome5 name="play" size={15} color="white" />
                                 </TouchableOpacity>
+                                <TouchableOpacity onPress={() => onRemoveWorkout(key)} style={[{width: 40, height: 40, backgroundColor: 'orangered'}, GlobalStyle.flex('row', 'center', 'center'), GlobalStyle.round, GlobalStyle.BoxShadow]}>
+                                    <LottieView source={Trash} autoPlay={false} style={{width: 50}} progress={0} />
+                                </TouchableOpacity>
                                 <TouchableOpacity onPress={() => onEditWorkout(item, key)} style={[Styles.saveButton, GlobalStyle.round, GlobalStyle.BoxShadow]}>
                                     <Text style={[GlobalStyle.Manjari, Styles.label1]}>Edit Workouts</Text>
                                 </TouchableOpacity>
@@ -126,7 +153,7 @@ const MyWorkoutScreen = ({navigation, onEdit, editable_workout}) => {
                 })}
             </ScrollView>
             <Loading loading={loading || _loading} />
-            { editable_workout && data && (
+            { editable_workout && data.data.length > 0 && (
                 <View style={{position:'absolute', width: GlobalStyle.SCREEN_WIDTH, height: '100%', top:0, left: 0, backgroundColor: Colors.BGlight}}>
                     <EditWorkout params={data} navigation={navigation} onClose={onClose} />
                 </View>
@@ -154,7 +181,7 @@ const Styles = new StyleSheet.create({
     },
     saveButton: {
         backgroundColor: Colors.MainGreen,
-        width: '80%',
+        width: '60%',
         paddingVertical: 8
     },
     label1: {

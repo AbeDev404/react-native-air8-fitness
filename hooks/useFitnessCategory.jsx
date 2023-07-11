@@ -12,7 +12,7 @@ export default useFitnessCategory = () => {
         FireStore().collection('Constants').doc('Categories').get().then(result => {
             setCategory(result._data)
         }).catch(error => {
-            console.log(error);
+            // console.log(error);
         });
     }
 

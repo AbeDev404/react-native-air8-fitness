@@ -3,7 +3,7 @@ import FirebaseApp from '@react-native-firebase/app';
 import FireStore from '@react-native-firebase/firestore';
 import Config from '../config'
 
-const useWorkouts= () => {
+const useWorkouts = () => {
     const [workouts, setWorkouts] = useState([])
     const [workoutNames, setWorkoutNames] = useState([])
     const [loading, setLoading] = useState(false);
@@ -12,7 +12,6 @@ const useWorkouts= () => {
         if(FirebaseApp.apps.length === 0) FirebaseApp.initializeApp(Config.firebaseConfig);
 
         setLoading(true);
-        console.log('111')
         FireStore().collection('Workouts').doc('test').get().then(result => {
             const keys = Object.keys(result._data);
             setWorkoutNames(keys)
@@ -24,7 +23,6 @@ const useWorkouts= () => {
             }
             setLoading(false);
         }).catch(error => {
-            console.log(error)
         })
     }
 

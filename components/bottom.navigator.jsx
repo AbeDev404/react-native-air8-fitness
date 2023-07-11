@@ -46,7 +46,6 @@ const Styles = new StyleSheet.create({
         position: 'absolute',
         bottom: 30,
     }
-    
 });
 
 export default BottomNavigator;
