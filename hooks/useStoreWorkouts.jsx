@@ -7,7 +7,6 @@ const useStoreWorkouts = () => {
     const [response, setResponse] = useState(null)
     
     const storeWorkouts = (type, workouts, name) => {
-        console.log(type, workouts, name);
         if(FirebaseApp.apps.length === 0) FirebaseApp.initializeApp(Config.firebaseConfig)
         return new Promise((resolve, reject) => {
 
@@ -23,12 +22,10 @@ const useStoreWorkouts = () => {
                     FireStore().collection('Workouts').doc('test').set(data).then(result => {
                         resolve('success')
                     }).catch(error => {
-                        console.log(error);
                         reject('failed')
                     });
                 }
             }).catch(error => {
-                console.log(error);
                 reject('failed')
             }); 
         })
