@@ -41,6 +41,7 @@ const WorkoutScreen = ({route, navigation}) => {
     const onPlaybackStatusUpdate = (playbackStatus) => {
         if (playbackStatus.didJustFinish) {
             if(playType === 'setup') {
+                console.log('setup finished')
                 setTime(0)
                 setPlayType('workoutLoading')
                 setLoop(true);
@@ -54,7 +55,7 @@ const WorkoutScreen = ({route, navigation}) => {
         setWorkoutTime(0);
         setExercises(route.params.data)
         setName(route.params.name)
-        generateThumbnail(route.params.data[index].data.video_url, 1)
+        generateThumbnail(route.params.data[index].data.video_url, 0)
         setVideoUri(route.params.data[index].data.setup_video_url)
         
         for(let i = 0 ; i < route.params.data.length ; i++) {
@@ -70,15 +71,15 @@ const WorkoutScreen = ({route, navigation}) => {
 
     useEffect(() => {        
         if(playing) {
-            if(playType === 'preview') {
-                let t = setInterval((loading) => {
-                    if(!loading) {
-                        setTime(e => e + 1)
-                        setTimer(e => e + 1)
-                    }
-                }, 1000, loading)
-                _setInterval(t);
-            } else if(playType === 'setup' || playType === 'exercise') {
+            let t = setInterval((loading) => {
+                if(!loading) {
+                    setTime(e => e + 1)
+                    setTimer(e => e + 1)
+                }
+            }, 1000, loading)
+            _setInterval(t);
+            
+            if(playType === 'setup' || playType === 'exercise' || playType === 'workoutLoading') {
                 setupVideo.current.playAsync();
             }
         } else {
@@ -95,10 +96,10 @@ const WorkoutScreen = ({route, navigation}) => {
             setTime(0)
             setPlayType('setup')
             setupVideo.current.replayAsync();
-        } else if(time === 5 && playType === 'workoutLoading') {
+        } else if(time === 2 && playType === 'workoutLoading') {
             setTime(0)
             setPlayType('exercise')
-            setupVideo.current.replayAsync();
+            setupVideo.current.playAsync();
         } else if(playType === 'exercise' && time === exercises[index].workoutTime) {
             setTime(0);
             setupVideo.current.pauseAsync();
@@ -110,6 +111,20 @@ const WorkoutScreen = ({route, navigation}) => {
             setIndex(e => e + 1)
         }
     }, [time])
+
+    const onVideoLoadStart = () => {
+        setLoading(true)
+        setPlaying(false)
+    }
+    const onVideoLoad = () => {
+        if(playType !== 'exercise') {
+            setLoading(false)
+            console.log(playType)
+            if(playType === 'setup' || playType === 'exercise' || playType === 'workoutLoading') setPlaying(true), setupVideo.current.playAsync();
+            // else if(!playing) setPlaying(true)
+            if(index > 0) setPlaying(true)
+        }
+    }
 
     const renderTimer = () => {
         return (
@@ -194,21 +209,14 @@ const WorkoutScreen = ({route, navigation}) => {
                             </LottieView>
                         </View>)}
 
-                    { !loading && playType === 'workoutLoading' && playing && (
-                        <View style={{position: 'absolute', width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center'}}>
-                            <LottieView style={{justifyContent: 'center', alignItems: 'center', position:'absolute', width: GlobalStyle.SCREEN_WIDTH / 3, height: GlobalStyle.SCREEN_WIDTH / 3 }} source={CountDownLottie} speed={0.2} loop autoPlay>
-                                <Text style={[{color: Colors.MainGreen, fontSize: GlobalStyle.SCREEN_WIDTH / 6, textAlign: 'center', paddingTop: GlobalStyle.SCREEN_WIDTH / 12}, GlobalStyle.ManjariBold]}>{5 - time}</Text>
-                            </LottieView>
-                        </View>)}
-
                     <Video
                         ref={setupVideo}
                         isLooping={loop}
                         style={[Styles.video, { opacity: playType === 'preview' ? 0 : 1 }]}
                         source={{ uri: videoUri }}
                         resizeMode={ResizeMode.CONTAIN}
-                        onLoadStart={() => setLoading(true)}
-                        onLoad={() => setLoading(false)}
+                        onLoadStart={onVideoLoadStart}
+                        onReadyForDisplay={onVideoLoad}
                         onError={(e) => console.log(e)}
                         onPlaybackStatusUpdate={onPlaybackStatusUpdate}
                     />
