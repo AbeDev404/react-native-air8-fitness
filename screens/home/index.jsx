@@ -1,9 +1,12 @@
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
+import React from 'react'
+import {View, Text, StyleSheet, TouchableOpacity, Platform} from 'react-native'
 import Lottie from 'lottie-react-native'
 
 import Colors from '../../assets/styles/colors';
 import GlobalStyle from '../../assets/styles/global.style'
 import BottomNavigator from '../../components/bottom.navigator'
+import { getImei } from 'react-native-imei'
+import DeviceInfo from 'react-native-device-info'
 
 import Fitness from '../../assets/drawables/fitness.json'
 import Office from '../../assets/drawables/office.json'
@@ -21,6 +24,12 @@ const HomeScreen = ({route, navigation}) => {
     const GoWorkouts = () => {
         navigation.push('Workouts', { type: 'my.workouts' })
     }
+
+    React.useEffect(() => {
+        DeviceInfo.getUniqueId().then((uniqueId) => {
+            console.log(uniqueId)
+        })
+    }, [])
 
     return (
         <View style={[GlobalStyle.container, GlobalStyle.flex('column', 'center', 'space-around'), { paddingBottom: 70 }]}>
